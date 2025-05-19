@@ -8,19 +8,22 @@ function TodoList({editTodo,deleteTodo,todoFinished}){
     // const dispatch=useDispatch();
 
     // use selector ki help se wo state la skte hai 
-    // jispe kam krn hai 
-    const list=useSelector((state)=>state.todo); 
+    // jispe kam krna hai 
+    // state m sari ki sari state hai usme se todo name ki state ko liya hai usme bhi todoList hai uska name 
+    // slice m dekho achese consept hai 
+    const list=useSelector((state)=>state.todo.todoList); 
+    console.log(list);
 
     function onFinished(todo, isFinished){
-        todoFinished(todo,isFinished);
+        todoFinished({todo,isFinished});
     }
 
     function onDelete(todo){
-        deleteTodo(todo);
+        deleteTodo({todo});
     }
 
     function onEdit(todo,todoText){
-        editTodo(todo,todoText);
+        editTodo({todo,todoText});
     }
 
     return (

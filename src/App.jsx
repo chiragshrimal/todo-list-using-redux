@@ -2,13 +2,15 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import TodoList from "./components/TodoList/TodoList";
 import AddTodo from "./components/AddTodo/AddTodo"
-import { addTodo,deleteTodo,todoFinished,editTodo } from "./actions/todoActions";
 import { bindActionCreators } from "redux";
+import todoReducer,{addTodo,editTodo,deleteTodo,todoFinished} from "./slices/todoSlice";
 
 function App() {
 
   const dispatch=useDispatch();
+  // devtool ka use kiya hai toh bindAction krne ki koi jarurat nhi hai 
   const actions=bindActionCreators({addTodo,deleteTodo,todoFinished,editTodo},dispatch);
+
   return (
     <>
       {/* add the new todo */}

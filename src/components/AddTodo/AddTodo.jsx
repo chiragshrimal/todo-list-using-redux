@@ -4,8 +4,7 @@ import { useState } from "react";
 
 // import { addTodo } from "../../actions/todoActions";
 
-// no need to pass update list because we are using context api concept 
-// and  reducer concept 
+// no need to pass updatalist wgr because we are using  react-react 
 function AddTodo({addTodo}){
 
     const [inputText,setInputText]=useState("");
@@ -18,7 +17,8 @@ function AddTodo({addTodo}){
                 onChange={(e)=>setInputText(e.target.value)}
             />
             <button onClick={()=>{
-                addTodo(inputText);
+                // because redux toolkit ka use kar rhe hai 
+                addTodo({todoText : inputText});
                 setInputText("");
                 }}>Add</button>
         </div>
